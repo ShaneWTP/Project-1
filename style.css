@@ -52,10 +52,23 @@ body{
   cursor: pointer;
 }
 
+.jumbotron {
+  background-image: url("screen.png");
+  background-size: cover;
+  text-align: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+body {
+  background-image: url(dark-honeycomb.png)
+}
+
 .container {
     font-size: 14px;
     color: #666666;
     font-family: "Open Sans";
+    background-image: url(dark-honeycomb.png)
 }
 
 .card-custom {
@@ -107,5 +120,6 @@ body{
     color:black;
 }
 footer {
-    background-color:lightslategray;
+    background-color: black;
+    color: antiquewhite;
 }
