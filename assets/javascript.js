@@ -12,42 +12,50 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 //this code creates a user in firebase based off of what they enter in the createuser screen
-/*
+
 //18-57
-$("#sub").on("click", function () {
+$("#saveBtn").on("click", function () {
     event.preventDefault();
 
-    var email = $("#exampleInputEmail1").val().trim();
-    var password = $("#exampleInputPassword1").val().trim();
+    var email = $("#email").val().trim();
+    var password = $("#passConfirm").val().trim();
+    //below is the field user first enters password in
+    var password1 = $("#password").val().trim();
 
+    if (password !== password1) {
+        $("#loginMessage").html("<h1>" + "Passwords do not match!" + "</h1>");
+    }
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-        console.log(email, password);
-        console.log(errorCode);
-        console.log(errorMessage);
+    else {
 
-        if (errorMessage !== "") {
-            $("#worked").html("<h1>" + "SOMETHING IS WRONG " + errorMessage + "</h1>");
-            console.log("wrong");
-        }
-        else {
-            $("#1worked").html("<h1>" + "User Created Successfully" + "</h1>");
-            $("#1worked").append("<h1>" + "UserName: " + email + "</h1>");
-            $("#1worked").append("<h1>" + "Password: " + password + "</h1>");
-            console.log("K");
-        }
+        $("#loginMessage").empty();
 
-    });
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+            console.log(email, password);
+            console.log(errorCode);
+            console.log(errorMessage);
 
-    console.log("vinnie");
+            if (errorMessage !== "") {
+                $("#loginMessage").html("<h1>" + "SOMETHING IS WRONG " + errorMessage + "</h1>");
+                console.log("wrong");
+            }
+            else {
+                $("#loginMessage").html("<h1>" + "User Created Successfully" + "</h1>");
+                $("#loginMessage").append("<h1>" + "UserName: " + email + "</h1>");
+                $("#loginMessage").append("<h1>" + "Password: " + password + "</h1>");
+                console.log("K");
+            }
+
+        });
+    }
     console.log(email, password);
 })
 
-*/
+
 
 
 //this code logs a user in with email/password on click of submit button
@@ -93,3 +101,4 @@ $("#subLogin").on("click", function () {
         }
     });
 */
+
