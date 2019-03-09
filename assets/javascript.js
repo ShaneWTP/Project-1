@@ -53,9 +53,30 @@ $("#saveBtn").on("click", function () {
         });
     }
     console.log(email, password);
-})
 
+    //the below allows data to be saved under a specific user id 
+    //this is only in the create profile submit button function for testing purposes
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
 
+            firebase.database().ref('users/' + user.uid).set({
+                username: password,
+                email: email
+                //some more user data
+            });
+
+            console.log(user.uid);
+            console.log(email);
+
+        } else {
+            // No user is signed in.
+            //$("#working").html("<h1>" + "it aint work" + "</h1>")
+            //document.location.href = "index.html";
+            incorrect();
+        }
+    });
+
+    });
 
 
 //this code logs a user in with email/password on click of submit button
