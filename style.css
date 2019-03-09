@@ -2,10 +2,73 @@ html {
     font-size: 14px;
 }
 
+body{
+  margin: 0;
+  padding: 0;
+  font-family:'Arial', 'serif';
+}
+
+.nav {
+  background-color: #595959;
+  color: #fff;
+  list-style: none;
+  text-align: right;
+  padding: 20px 0 20px 0;
+}
+
+.nav > li{
+  display: inline-block;
+  padding-right: 50px;
+}
+
+.nav > li > a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav > li > a:hover {
+  color: rgb(51, 70, 247)
+}
+
+.nav .search {
+  float: left;
+}
+
+.nav input[type=text]{
+  
+  margin-top: 0;
+  margin-bottom:20px;
+  border: none;
+  font-size: 17px;
+}
+
+.nav .search button{
+  float: left;
+  
+  margin-bottom: 8px;
+  font-size: 17px;
+  border: none;
+  background-color: green;
+  cursor: pointer;
+}
+
+.jumbotron {
+  background-image: url("screen.png");
+  background-size: cover;
+  text-align: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+body {
+  background-image: url(dark-honeycomb.png)
+}
+
 .container {
     font-size: 14px;
     color: #666666;
     font-family: "Open Sans";
+    background-image: url(dark-honeycomb.png)
 }
 
 .card-custom {
@@ -57,5 +120,6 @@ html {
     color:black;
 }
 footer {
-    background-color:lightslategray;
+    background-color: black;
+    color: antiquewhite;
 }
