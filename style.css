@@ -1,15 +1,12 @@
-html {
-    font-size: 14px;
-}
-
 body{
   margin: 0;
   padding: 0;
   font-family:'Arial', 'serif';
+  background-image: url(dark-honeycomb.png);
 }
 
 .nav {
-  background-color: #595959;
+  background-image: url(dark-honeycomb.png);
   color: #fff;
   list-style: none;
   text-align: right;
@@ -58,11 +55,18 @@ body{
   text-align: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  min-height: 500px;
+  font-family: 'Abril Fatface', cursive;
+  color: whitesmoke;
 }
 
-body {
-  background-image: url(dark-honeycomb.png)
+.jumbotron h1 {
+  padding: 70px 0px 0px 0px;
 }
+
+/*.jumbotron p {
+  padding: 0px 350px 0px 0px;
+}*/
 
 .container {
     font-size: 14px;
@@ -121,5 +125,18 @@ body {
 }
 footer {
     background-color: black;
-    color: antiquewhite;
+    color: white;
+}
+
+#username {
+  padding: 100px;
+  color: white;
+}
+
+#avatar {
+  padding: 20px;
+}
+
+.profile-page {
+  background-color: whitesmoke;
 }

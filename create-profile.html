@@ -7,6 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Digital Media Reviews</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500&amp;subset=latin-ext" rel="stylesheet">
@@ -24,7 +33,7 @@
                 <!-- form user info -->
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="mb-0">User Information</h4>
+                        <h4 class="mb-0">New User</h4>
                     </div>
                     <div class="card-body">
                         <form class="form" role="form" autocomplete="off">
@@ -67,8 +76,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label form-control-label"></label>
                                 <div class="col-lg-9">
-                                    <input type="reset" class="btn btn-secondary" value="Cancel" id="cancelBtn">
-                                    <input type="button" class="btn btn-primary" value="Save Changes" id="saveBtn">
+                                     <input type="button" class="btn btn-primary btn-lg float-right" value="Create Profile">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -80,7 +88,38 @@
 
                     </div>
                 </div>
-                <!-- /form user info -->
+                <br>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="mb-0">Login</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST">
+                            <div class="form-group">
+                                <label for="uname1">Username</label>
+                                <input type="text" class="form-control form-control-lg" name="uname1"
+                                    id="uname1" required="">
+                                <div class="invalid-feedback">Oops, you missed this one.</div>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" class="form-control form-control-lg" id="pwd1"
+                                    required="" autocomplete="new-password">
+                                <div class="invalid-feedback">Enter your password too!</div>
+                            </div>
+                            <div>
+                                <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description small text-dark">Remember me on this
+                                        computer</span>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg float-right"
+                                id="btnLogin">Login</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
