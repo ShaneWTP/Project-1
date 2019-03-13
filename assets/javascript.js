@@ -14,7 +14,7 @@ var database = firebase.database();
 //this code creates a user in firebase based off of what they enter in the createuser screen
 
 //18-57
-$("#saveBtn").on("click", function () {
+$("#createProfile").on("click", function () {
     event.preventDefault();
 
     var email = $("#email").val().trim();
@@ -39,16 +39,6 @@ $("#saveBtn").on("click", function () {
             console.log(errorCode);
             console.log(errorMessage);
 
-            if (errorMessage !== "") {
-                $("#loginMessage").html("<h1>" + "SOMETHING IS WRONG " + errorMessage + "</h1>");
-                console.log("wrong");
-            }
-            else {
-                $("#loginMessage").html("<h1>" + "User Created Successfully" + "</h1>");
-                $("#loginMessage").append("<h1>" + "UserName: " + email + "</h1>");
-                $("#loginMessage").append("<h1>" + "Password: " + password + "</h1>");
-                console.log("K");
-            }
 
         });
     }
@@ -56,47 +46,63 @@ $("#saveBtn").on("click", function () {
 
     //the below allows data to be saved under a specific user id 
     //this is only in the create profile submit button function for testing purposes
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-
-            firebase.database().ref('users/' + user.uid).set({
-                username: password,
-                email: email
-                //some more user data
-            });
-
-            console.log(user.uid);
-            console.log(email);
-
-        } else {
-            // No user is signed in.
-            //$("#working").html("<h1>" + "it aint work" + "</h1>")
-            //document.location.href = "index.html";
-            incorrect();
-        }
-    });
+    
 
     });
 
 
 //this code logs a user in with email/password on click of submit button
 //55-68
-/*
-$("#subLogin").on("click", function () {
+
+$("#btnLogin").on("click", function () {
     event.preventDefault();
 
-    var email = $("#exampleInputEmailLogin").val().trim();
-    var password = $("#exampleInputPasswordLogin").val().trim();
+    var email = $("#uname1").val().trim();
+    var password = $("#pwd1").val().trim();
 
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
         // //     // Handle Errors here.
-        var errorCode = error.code;
         var errorMessage = error.message;
         // ...
+        console.log("WRONG");
+
+        if (errorMessage !== "") {
+            $("#loginMessage").html("<p>" + "*" + errorMessage + "*" + "<p>");
+            console.log("wrong");
+        }
+        else {
+            $("#loginMessage").html("<h1>" + "User Created Successfully" + "</h1>");
+            $("#loginMessage").append("<h1>" + "UserName: " + email + "</h1>");
+            $("#loginMessage").append("<h1>" + "Password: " + password + "</h1>");
+            console.log("K");
+        }
+    });
+
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+
+            firebase.database().ref('users/' + user.uid).push({
+                username: password,
+                email: email
+                //some more user data
+                
+            });
+
+            console.log(user.uid);
+            console.log(email); 
+            console.log("Logged In");
+            document.location.href = "index.html";
+        } 
+            
+            else {
+          
+           
+        }
+    });
 
     });
-})
-*/
+
+
 
 
 //this code stores user specific data based on their firebase uid
@@ -116,7 +122,7 @@ $("#subLogin").on("click", function () {
 
         } else {
             // No user is signed in.
-            //$("#working").html("<h1>" + "it aint work" + "</h1>")
+            //$("#working").html("<h1>" + "it didnt work" + "</h1>")
             //document.location.href = "index.html";
             incorrect();
         }
