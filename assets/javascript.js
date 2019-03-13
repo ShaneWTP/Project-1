@@ -12,7 +12,6 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 //this code creates a user in firebase based off of what they enter in the createuser screen
-
 //18-57
 $("#createProfile").on("click", function () {
     event.preventDefault();
@@ -44,11 +43,7 @@ $("#createProfile").on("click", function () {
     }
     console.log(email, password);
 
-    //the below allows data to be saved under a specific user id 
-    //this is only in the create profile submit button function for testing purposes
-    
-
-    });
+});
 
 
 //this code logs a user in with email/password on click of submit button
@@ -85,22 +80,42 @@ $("#btnLogin").on("click", function () {
                 username: password,
                 email: email
                 //some more user data
-                
+
             });
 
             console.log(user.uid);
-            console.log(email); 
+            console.log(email);
             console.log("Logged In");
-            document.location.href = "index.html";
-        } 
-            
-            else {
-          
-           
+            //document.location.href = "index.html";
         }
+
+        else {
+
+
+        }
+// this does return the current user ID. Need to retrieve the Email
+        $( "adminPage.html" ).ready(function() {
+                firebase.auth().onAuthStateChanged(function (user) {
+                    var welcome = user.uid;
+            
+                    if (user) {
+            
+                        console.log("This should Work" + welcome);
+            
+                    }
+                    else {
+                        //         // No user is signed in.
+                        //         //$("#working").html("<h1>" + "it aint work" + "</h1>")
+                        //         //document.location.href = "index.html";
+                        //         //incorrect();
+                        console.log("NOPE");
+                    }
+                console.log( "ready!" );
+            })
+        })
     });
 
-    });
+});
 
 
 
