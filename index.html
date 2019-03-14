@@ -19,31 +19,44 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <title>Digital Media Reviews</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500&amp;subset=latin-ext" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ultra" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
-  <!--navbar-->
-  <div class="nav">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Categories</a></li>
-    <li><a href="#">Profile</a></li>
-
-    <div class="search">
-      <form>
-        <input type="text">
-        <button>Search</button>
-      </form>
-    </div>
-  </div>
   <!--jumbotron-->
   <div class="jumbotron center">
     <h1 class="display-4">Digital Media Reviews</h1>
-    <p class="lead">Search for reviews of Movies, TV Shows, and Video Games with just the click of a button.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
+    <h4 class="description">Search for reviews of Movies, Shows, and Video Games with just the click of a button.
+    </h4>
+    <div id="nav-btns" class="btn-group-vertical float-right" role="group"
+      aria-label="Button group with nested dropdown">
+      <button type="button" id="btn-xlarge" class="btn btn-secondary">Home</button>
+      <button type="button" id="btn-xlarge" class="btn btn-secondary">Login</button>
+      <div class="btn-group dropleft" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Search
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <form class="dropdown-item">
+            <input />
+            <button>Movies</button>
+          </form>
+          <form class="dropdown-item">
+            <input />
+            <button>Shows</button>
+          </form>
+          <form class="dropdown-item">
+            <input />
+            <button>Video Games</button>
+          </form>
+        </div>
+      </div>
+      <div id="welcome">
+          <p>Welcome, Username!</p>
+        </div>
+    </div>
   </div>
   <!--div to contain entire webpage body-->
   <div class="container">

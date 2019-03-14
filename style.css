@@ -5,68 +5,56 @@ body{
   background-image: url(dark-honeycomb.png);
 }
 
-.nav {
-  background-image: url(dark-honeycomb.png);
-  color: #fff;
-  list-style: none;
-  text-align: right;
-  padding: 20px 0 20px 0;
-}
-
-.nav > li{
-  display: inline-block;
-  padding-right: 50px;
-}
-
-.nav > li > a {
-  text-decoration: none;
-  color: white;
-}
-
-.nav > li > a:hover {
-  color: rgb(51, 70, 247)
-}
-
-.nav .search {
-  float: left;
-}
-
-.nav input[type=text]{
-  
-  margin-top: 0;
-  margin-bottom:20px;
-  border: none;
-  font-size: 17px;
-}
-
-.nav .search button{
-  float: left;
-  
-  margin-bottom: 8px;
-  font-size: 17px;
-  border: none;
-  background-color: green;
-  cursor: pointer;
-}
-
 .jumbotron {
   background-image: url("screen.png");
   background-size: cover;
   text-align: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  min-height: 500px;
-  font-family: 'Abril Fatface', cursive;
-  color: whitesmoke;
+  min-height: 600px;
+  font-family: 'Ultra', serif;
+  color: black;
 }
 
 .jumbotron h1 {
-  padding: 70px 0px 0px 0px;
+  padding: 175px 350px 0px 0px;
 }
 
-/*.jumbotron p {
+.jumbotron h4 {
   padding: 0px 350px 0px 0px;
-}*/
+}
+
+#btn-xlarge {
+  background-color: #4E3730;
+  position: relative;
+  left: 10px;
+  bottom: 310px;
+  padding: 18px 28px;
+  font-size: 40px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+}
+
+#btnGroupDrop1 {
+  background-color: #4E3730;
+  position: relative;
+  left: 10px;
+  bottom: 310px;
+  padding: 18px 28px;
+  font-size: 40px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+}
+
+#welcome {
+  position: relative;
+  left: 40px;
+  bottom: 600px;
+}
 
 .container {
     font-size: 14px;
@@ -140,3 +128,4 @@ footer {
 .profile-page {
   background-color: whitesmoke;
 }
+
