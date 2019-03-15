@@ -22,26 +22,26 @@ $.ajax({
     var art2 = response.articles[rand2];
     
     //next change the the card-title of one to the title of an article
-    $("#Game1").text(art1.title);
+    $("#header1").text(art1.title);
 
     //next replace the image with one corrisponding to the article
-    $("#game-img").css("background-image", "url(" + art1.urlToImage + ")");
+    $("#img1").css("background-image", "url(" + art1.urlToImage + ")");
 
     //next change the card-text with the description of the article
-    $("#Game2").text(art1.description);
+    $("#OVA1").text(art1.description);
 
     //lastly add the link to the continue button 
-    $("#game1-button").attr('href', art1.url);
-    $("#game1-button").on("click", function(){
+    $("#button1").attr('href', art1.url);
+    $("#button1").on("click", function(){
         $(this).attr('target', '_blank');
     });
 
     //repeat the steps above for the second article
-    $("#game3").text(art2.title);
-    $("#game2-img").css("background-image", "url(" + art2.urlToImage + ")");
-    $("#game4").text(art2.description);
-    $("#game2-button").attr('href', art2.url);
-    $("#game2-button").on("click", function(){
+    $("#header6").text(art2.title);
+    $("#img6").css("background-image", "url(" + art2.urlToImage + ")");
+    $("#OVA6").text(art2.description);
+    $("#button6").attr('href', art2.url);
+    $("#button6").on("click", function(){
         $(this).attr('target', '_blank');
     });
     
@@ -56,15 +56,16 @@ $.ajax({
     url: trendsLink,
     method: "GET"
 }).then(function(response){
+   
     
     //grab the most popular item
     var popular = response.results[0];
     //next apend the title of the trending movie to a card
-    $("#trendingTV").text(popular.original_name);
-    $("#trendingTV").prepend("Trending on TV: <br>");
+    $("#header2").text(popular.original_name);
+    $("#header2").prepend("Trending on TV: <br>");
 
     //next apend the overview of the trending movie
-    $("#trendingOva").text(popular.overview);
+    $("#OVA2").text(popular.overview);
 
         //next make another var to store the name of the movie
         var TVName = popular.original_name;
@@ -74,10 +75,11 @@ $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function(results){
+            
     //next append the poster of that trending movie
-    $("#trendingImg").css("background-image","url(" + results.Poster + ")");
-    $("#trendingTVLink").attr('href', results.Website);
-    $("#trendingTVLink").on("click", function(){
+    $("#img2").css("background-image","url(" + results.Poster + ")");
+    $("#button2").attr('href', results.Poster);
+    $("#button2").on("click", function(){
         $(this).attr('target', '_blank');
     });
     });
@@ -94,11 +96,11 @@ $.ajax({
     var popular = response.results[0];
     
     //next apend the title of the trending movie to a card
-    $("#trendingMovie").text(popular.original_title);
-    $("#trendingMovie").prepend("Trending Movie: <br>");
+    $("#header4").text(popular.original_title);
+    $("#header4").prepend("Trending Movie: <br>");
 
     //next apend the overview of the trending movie
-    $("#trendingOverview").text(popular.overview);
+    $("#OVA4").text(popular.overview);
 
       //next make another var to store the name of the movie
       var MovieName = popular.original_title;
@@ -109,9 +111,9 @@ $.ajax({
           method: "GET"
         }).then(function(results){
         //next append the poster of that trending movie
-        $("#trendingMovieImg").css("background-image","url(" + results.Poster + ")");
-        $("#trendingMovieLink").attr('href', results.Website);
-        $("#trendingMovieLink").on("click", function(){
+        $("#img4").css("background-image","url(" + results.Poster + ")");
+        $("#button4").attr('href', results.Website);
+        $("#button4").on("click", function(){
             $(this).attr('target', '_blank');
         });
   });
@@ -135,26 +137,26 @@ $.ajax({
      var art2 = response.results[rand2];
 
      //next grab the title of the review and display it in html
-     $("#review").text(art1.headline);
+     $("#header3").text(art1.headline);
 
      //then change the text of the html to fit the description
-     $("#reviewOva").text(art1.summary_short);
+     $("#OVA3").text(art1.summary_short);
 
      //next change the image to one that fits the review
-     $("#reviewImg").css("background-image", "url(" + art1.multimedia.src + ")");
+     $("#img3").css("background-image", "url(" + art1.multimedia.src + ")");
 
      //if the user clicks read me it will load the review in a new page
-     $("#reviewLink").attr('href', art1.link.url);
-     $("#reviewLink").on("click", function(){
+     $("#button3").attr('href', art1.link.url);
+     $("#button3").on("click", function(){
          $(this).attr('target', '_blank');
      });
 
      //lastly repeat the steps to create a second review
-      $("#review2").text(art2.headline);
-      $("#reviewOva2").text(art2.summary_short);
-      $("#reviewImg2").css("background-image", "url(" + art2.multimedia.src + ")");
-      $("#reviewLink2").attr('href', art2.link.url);
-      $("#reviewLink2").on("click", function(){
+      $("#header5").text(art2.headline);
+      $("#OVA5").text(art2.summary_short);
+      $("#img5").css("background-image", "url(" + art2.multimedia.src + ")");
+      $("#button5").attr('href', art2.link.url);
+      $("#button5").on("click", function(){
           $(this).attr('target', '_blank');
       });
 
