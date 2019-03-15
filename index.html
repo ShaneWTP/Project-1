@@ -25,37 +25,40 @@
 
 <body>
   <!--jumbotron-->
-  <div class="jumbotron center">
-    <h1 class="display-4">Digital Media Reviews</h1>
-    <h4 class="description">Search for reviews of Movies, Shows, and Video Games with just the click of a button.
-    </h4>
-    <div id="nav-btns" class="btn-group-vertical float-right" role="group"
-      aria-label="Button group with nested dropdown">
-      <button type="button" id="btn-xlarge" class="btn btn-secondary">Home</button>
-      <button type="button" id="btn-xlarge" class="btn btn-secondary">Login</button>
-      <div class="btn-group dropleft" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Search
-        </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <form class="dropdown-item">
-            <input />
-            <button>Movies</button>
-          </form>
-          <form class="dropdown-item">
-            <input />
-            <button>Shows</button>
-          </form>
-          <form class="dropdown-item">
-            <input />
-            <button>Video Games</button>
-          </form>
+  <div class="container">
+    <div class="jumbotron center">
+      <h1 class="display-4">Digital Media News</h1>
+      <h4 class="description">Search for Movie, Show, and Video Game news
+      </h4>
+      <h4 class="description">with just the click of a button.
+      </h4>
+      <div id="nav-btns" class="btn-group-vertical float-right" role="group"
+        aria-label="Button group with nested dropdown">
+        <button type="button" id="btn-xlarge" class="btn btn-secondary btn-lg">Home</button>
+        <button type="button" id="btn-xlarge" class="btn btn-secondary btn-lg">Login</button>
+        <div class="btn-group dropleft" role="group">
+          <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Search
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <form class="dropdown-item">
+              <input id="movieSearch" />
+              <button id="movieBTN">Movies</button>
+            </form>
+            <form class="dropdown-item">
+              <input id="showSearch" />
+              <button id="showBTN">Shows</button>
+            </form>
+            <form class="dropdown-item">
+              <input id="gameSearch" />
+              <button id="gameBTN">Video Games</button>
+          </div>
         </div>
-      </div>
-      <div id="welcome">
+        <div id="welcome">
           <p>Welcome, Username!</p>
         </div>
+      </div>
     </div>
   </div>
   <!--div to contain entire webpage body-->
@@ -65,59 +68,52 @@
       <!--article 1-->
       <div class="col-md-6 col-lg-4 pb-3">
         <div class="card card-custom bg-white border-white border-0">
-          <div class="card-custom-img" style="background-image: url(red-dead-redemption-2.jpg);">
+          <div class="card-custom-img" id="img1" style="background-image: url();">
           </div>
           <div class="card-custom-avatar">
-            <img class="img-fluid" src="video-game.png" alt="Avatar" />
+            <!-- <img class="img-fluid"  src="video-game.png" alt="Avat ar" /> -->
           </div>
           <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title">Red Dead Redemption 2</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, sem ut
-              mollis pretium, quam sapien dapibus mi, at vulputate sem est vitae massa. Pellentesque felis ligula,
-              pharetra ac luctus.</p>
+            <h4 class="card-title" id="header1"></h4>
+            <p class="card-text" id="OVA1"></p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <a href="#" class="btn btn-outline-primary float-right">Continue</a>
+            <a href="" class="btn btn-outline-primary float-right" id="button1">Read More</a>
           </div>
         </div>
       </div>
       <!--article 2-->
       <div class="col-md-6 col-lg-4 pb-3">
         <div class="card card-custom bg-white border-white border-0">
-          <div class="card-custom-img" style="background-image: url(game-of-thrones.jpeg);">
+          <div class="card-custom-img" id="img2"
+            style="background-image: url(https://i.ytimg.com/vi/MK9YPjKss9o/maxresdefault.jpg);">
           </div>
           <div class="card-custom-avatar">
-            <img class="img-fluid" src="television.png" alt="Avatar" />
+            <!-- <img class="img-fluid" src="television.png" alt="Avatar" /> -->
           </div>
           <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title">Game of Thrones<br>Season 6: Episode 2</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis libero tortor,
-              venenatis
-              pretium turpis at, molestie consequat enim. Duis eget nunc augue. Praesent ultrices purus id consequat
-              venenatis. Phasellus rhoncus.</p>
+            <h4 class="card-title" id="header2"></h4>
+            <p class="card-text" id="OVA2"></p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <a href="#" class="btn btn-outline-primary float-right">Continue</a>
+            <a href="" id="button2" class="btn btn-outline-primary float-right">Read More</a>
           </div>
         </div>
       </div>
       <!--article 3-->
       <div class="col-md-6 col-lg-4 pb-3">
         <div class="card card-custom bg-white border-white border-0">
-          <div class="card-custom-img" style="background-image: url(led-zeppelin.jpg);">
+          <div class="card-custom-img" id="img3" style="background-image: url();">
           </div>
           <div class="card-custom-avatar">
-            <img class="img-fluid" src="music.png" alt="Avatar" />
+            <!-- <img class="img-fluid" src="music.png" alt="Avatar" /> -->
           </div>
           <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title">Led Zeppelin<br>Houses of the Holy</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida sem ex, at
-              lobortis
-              turpis fermentum ut. Cras finibus ornare venenatis. Aliquam vestibulum enim pharetra ornare pretium.
-              Phasellus vestibulum.</p>
+            <h4 class="card-title" id="header3"></h4>
+            <p class="card-text" id="OVA3"></p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <a href="#" class="btn btn-outline-primary float-right">Continue</a>
+            <a id="button3" href="" class="btn btn-outline-primary float-right">Read More</a>
           </div>
         </div>
       </div>
@@ -127,59 +123,52 @@
       <!--article 4-->
       <div class="col-md-6 col-lg-4 pb-3">
         <div class="card card-custom bg-white border-white border-0">
-          <div class="card-custom-img" style="background-image: url(avengers.jpg);">
+          <div class="card-custom-img" id="img4"
+            style="background-image: url(http://christandcascadia.com/wp-content/uploads/2014/02/trending-now5_1.jpg);">
           </div>
           <div class="card-custom-avatar">
-            <img class="img-fluid" src="movies.png" alt="Avatar" />
+            <!-- <img class="img-fluid" src="movies.png" alt="Avatar" /> -->
           </div>
           <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title">Avengers: Infinity War</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis odio consequat,
-              placerat dui eu, posuere orci. Etiam mi nibh, dictum et hendrerit vitae, congue at mauris. Nulla in
-              consectetur.</p>
+            <h4 class="card-title" id="header4"></h4>
+            <p class="card-text" id="OVA4"></p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <a href="#" class="btn btn-outline-primary float-right">Continue</a>
+            <a href="" id="button4" class="btn btn-outline-primary float-right">Read More</a>
           </div>
         </div>
       </div>
       <!--article 5-->
       <div class="col-md-6 col-lg-4 pb-3">
         <div class="card card-custom bg-white border-white border-0">
-          <div class="card-custom-img" style="background-image: url(kendrick.jpg);">
+          <div class="card-custom-img" id="img5" style="background-image: url();">
           </div>
           <div class="card-custom-avatar">
-            <img class="img-fluid" src="music.png" alt="Avatar" />
+            <!-- <img class="img-fluid" src="music.png" alt="Avatar" /> -->
           </div>
           <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title">Kendrick Lamar<br>DAMN.</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus blandit
-              est,
-              non malesuada ante hendrerit eu. Vivamus aliquam tempus erat id fringilla. Maecenas auctor congue
-              turpis,
-              a varius lectus.</p>
+            <h4 class="card-title" id="header5"></h4>
+            <p class="card-text" id="OVA5"></p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <a href="#" class="btn btn-outline-primary float-right">Continue</a>
+            <a id="button5" href="" class="btn btn-outline-primary float-right">Read More</a>
           </div>
         </div>
       </div>
       <!--article 6-->
       <div class="col-md-6 col-lg-4 pb-3">
         <div class="card card-custom bg-white border-white border-0">
-          <div class="card-custom-img" style="background-image: url(zelda.jpg);">
+          <div class="card-custom-img" id="img6" style="background-image: url();">
           </div>
           <div class="card-custom-avatar">
-            <img class="img-fluid" src="video-game.png" alt="Avatar" />
+            <!-- <img class="img-fluid" src="video-game.png" alt="Avatar" /> -->
           </div>
           <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title">The Legend of Zelda<br>Breath of the Wild</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pellentesque mauris vitae
-              lacus venenatis finibus. Donec ac nisl metus. Phasellus malesuada nunc a lacus blandit, et rhoncus eros
-              eleifend. Morbi.</p>
+            <h4 class="card-title" id="header6"></h4>
+            <p class="card-text" id="OVA6"></p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <a href="#" class="btn btn-outline-primary float-right">Continue</a>
+            <a href="#" id="button6" class="btn btn-outline-primary float-right">Read More</a>
           </div>
         </div>
       </div>
@@ -190,6 +179,11 @@
     <div class="footer-copyright text-center py-3">© 2019 Copyright: Digital Media Reviews
     </div>
   </footer>
+
+  <script src="api.js"></script>
+  <script src="assets/javascript.js"></script>
+  <script src="SearchingAPI.js"></script>
+
 </body>
 
 </html>
