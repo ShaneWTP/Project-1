@@ -11,6 +11,19 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+$("#btn-xlarge").on("click", function () {
+    event.preventDefault();
+
+    document.location.href = "create-profile.html";
+    console.log("Hello");
+})
+
+$("#profileB").on("click", function () {
+    event.preventDefault();
+
+    document.location.href = "user-profile.html";
+    console.log("Hello");
+})
 //this code creates a user in firebase based off of what they enter in the createuser screen
 $("#createProfile").on("click", function () {
     event.preventDefault();
@@ -77,15 +90,15 @@ $("#btnLogin").on("click", function () {
 
     //directing user to home page when login is successful 
     document.location.href = "index.html";
-
-    // var uname = childSnapshot.val().name;
-
 });
+
+$("#profHome").on("click", function() {
+    document.location.href = "index.html";
+})
 
 // this does return the current user ID. Need to retrieve the Email
 $(document).ready(function () {
     firebase.auth().onAuthStateChanged(function (user) {
-        var welcome = user.uid;
         if (user) {
             database.ref().on("child_added", function (childSnapshot) {
                 var uEmail = childSnapshot.val().uemail;
@@ -101,64 +114,5 @@ $(document).ready(function () {
     })
 })
 
-// //this is where the user's search history will be stored in the db
-$("#movieBtn").on("click", function () {
-    event.preventDefault();
-    var movie = $("#movieSearch").val().trim();
-    var searchMov = {
-        movies: movie,
-    }
-    firebase.database().ref().push(searchMov);
-    console.log(movie);
-})
-
-$("#showsBtn").on("click", function () {
-    var show = $("#showsSearch").val().trim();
-    event.preventDefault();
-    var searchShow = {
-        shows: show,
-    }
-    firebase.database().ref().push(searchShow);
-    console.log(searchShow);
-
-})
-
-$("#gamesBtn").on("click", function () {
-    var game = $("#gamesSearch").val();
-    event.preventDefault();
-    var searchGame = {
-        games: game
-    }
-    firebase.database().ref().push(searchGame);
-    console.log(searchGame);
-
-})
-
-database.ref().on("child_added", function (childSnapshot) {
-    var dbMovie = childSnapshot.val().movies;
-    var dbTv = childSnapshot.val().show;
-    var dbGame = childSnapshot.val().game;
-
-    (console.log(dbMovie));
-    (console.log(dbTv));
-    (console.log(dbGame));
-
-    var newRowMov = $("<tr>").append(
-        $("<td>").text(dbMovie)
-    );
-    $("#movieHistory").append(newRowMov);
-
-    var newRowTv = $("<tr>").append(
-        $("<td>").text(dbTv)
-    );
-    $("#showsHistory").append(newRowTv);
-
-    var newRowGame = $("<tr>").append(
-        $("<td>").text(dbGame)
-    );
-    $("gamesHistory").append(newRowGame);
-})
-
-//need to create elements to be used in the tables on the user profile page 
 
 
