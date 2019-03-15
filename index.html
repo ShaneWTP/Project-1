@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!--Link forBootstrap-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+  <!--Link for CSS StyleSheet-->  
+
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" />
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -16,14 +21,35 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+
   <link rel="stylesheet" type="text/css" href="style.css">
   <title>Digital Media Reviews</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500&amp;subset=latin-ext" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Ultra" rel="stylesheet">
+  <!--Link for font-->
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ultra" rel="stylesheet">  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!--Link for database-->
+  <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+  <!--Link for jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
+
+  <!--navbar-->
+  <div class="nav">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Categories</a></li>
+    <li><a href="user-profile.html">Profile</a></li>
+
+    <div class="search">
+      <form>
+        <input type="text">
+        <button>Search</button>
+      </form>
+    </div>
+  </div>
+
   <!--jumbotron-->
   <div class="container">
     <div class="jumbotron center">
@@ -164,8 +190,8 @@
             <!-- <img class="img-fluid" src="video-game.png" alt="Avatar" /> -->
           </div>
           <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title" id="header6"></h4>
-            <p class="card-text" id="OVA6"></p>
+            <h4 class="card-title" id = "header6"></h4>
+            <p class="card-text" id = "OVA6"></p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
             <a href="#" id="button6" class="btn btn-outline-primary float-right">Read More</a>
@@ -183,6 +209,7 @@
   <script src="api.js"></script>
   <script src="assets/javascript.js"></script>
   <script src="SearchingAPI.js"></script>
+
 
 </body>
 

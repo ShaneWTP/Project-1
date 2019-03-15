@@ -255,3 +255,16 @@ footer {
     font-size: 12px;
   }
 }
+
+#loginMessageNew{
+ text-align: center;
+ margin-top: 10px;
+ margin-left: 50px;
+}
+
+#loginMessage{
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 100px;
+  color: red;
+ }
