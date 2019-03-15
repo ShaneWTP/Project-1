@@ -17,6 +17,7 @@ $("#createProfile").on("click", function () {
 
     var email = $("#email").val().trim();
     var password = $("#passConfirm").val().trim();
+    var firstName = $("#lastName").val()
     //below is the field user first enters password in
     var password1 = $("#password").val().trim();
 
@@ -30,13 +31,16 @@ $("#createProfile").on("click", function () {
             var errorCode = error.code;
             var errorMessage = error.message;
             // ...
-            console.log(email, password);
-            console.log(errorCode);
-            console.log(errorMessage);
         });
         $("#loginMessageNew").text("User Created Successfully. Please log in below!");
     }
-    console.log(email, password);
+
+    //creating db object 
+    var n = {
+        name: firstName
+    };
+    //pushing object to db
+    firebase.database().ref().push(n)
 });
 
 
@@ -51,11 +55,8 @@ $("#btnLogin").on("click", function () {
         // //     // Handle Errors here.
         var errorMessage = error.message;
         // ...
-        console.log("WRONG");
-
         if (errorMessage !== "") {
             $("#loginMessage").html("<p>" + "***" + errorMessage + "<p>");
-            console.log("wrong");
         }
         else {
             $("#loginMessage").html("<h1>" + "User Created Successfully" + "</h1>");
@@ -76,6 +77,9 @@ $("#btnLogin").on("click", function () {
 
     //directing user to home page when login is successful 
     document.location.href = "index.html";
+
+    // var uname = childSnapshot.val().name;
+
 });
 
 // this does return the current user ID. Need to retrieve the Email
@@ -85,25 +89,76 @@ $(document).ready(function () {
         if (user) {
             database.ref().on("child_added", function (childSnapshot) {
                 var uEmail = childSnapshot.val().uemail;
-                console.log(childSnapshot.val());
-
                 //the below returns our test users email that is stored in the db
                 //will need to change the div that it hooks on to
-                $("#indexUser").text("Welcome, " + uEmail + "!");
+                $("#username").html("<h1>" + "Hello, " + uEmail + "!" + "</h1>");
+                $("#welcome").html("<p>" + "Welcome, " + uEmail + "!" + "</p>");
             })
         }
         else {
             console.log("NOPE");
         }
-        console.log("ready!");
     })
 })
 
 // //this is where the user's search history will be stored in the db
-// var movie = $("#").val().trim();
-// var show = $("#").val().trim();
-// var game = $("#").val().trim();
+$("#movieBtn").on("click", function () {
+    event.preventDefault();
+    var movie = $("#movieSearch").val().trim();
+    var searchMov = {
+        movies: movie,
+    }
+    firebase.database().ref().push(searchMov);
+    console.log(movie);
+})
 
-// var searches ={
+$("#showsBtn").on("click", function () {
+    var show = $("#showsSearch").val().trim();
+    event.preventDefault();
+    var searchShow = {
+        shows: show,
+    }
+    firebase.database().ref().push(searchShow);
+    console.log(searchShow);
 
-// }
+})
+
+$("#gamesBtn").on("click", function () {
+    var game = $("#gamesSearch").val();
+    event.preventDefault();
+    var searchGame = {
+        games: game
+    }
+    firebase.database().ref().push(searchGame);
+    console.log(searchGame);
+
+})
+
+database.ref().on("child_added", function (childSnapshot) {
+    var dbMovie = childSnapshot.val().movies;
+    var dbTv = childSnapshot.val().show;
+    var dbGame = childSnapshot.val().game;
+
+    (console.log(dbMovie));
+    (console.log(dbTv));
+    (console.log(dbGame));
+
+    var newRowMov = $("<tr>").append(
+        $("<td>").text(dbMovie)
+    );
+    $("#movieHistory").append(newRowMov);
+
+    var newRowTv = $("<tr>").append(
+        $("<td>").text(dbTv)
+    );
+    $("#showsHistory").append(newRowTv);
+
+    var newRowGame = $("<tr>").append(
+        $("<td>").text(dbGame)
+    );
+    $("gamesHistory").append(newRowGame);
+})
+
+//need to create elements to be used in the tables on the user profile page 
+
+
