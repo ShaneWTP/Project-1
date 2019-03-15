@@ -51,49 +51,39 @@
   </div>
 
   <!--jumbotron-->
-  <div class="jumbotron center">
-    <h1 class="display-4">Digital Media Reviews</h1>
-    <h4 class="description">Search for reviews of Movies, Shows, and Video Games with just the click of a button.
-    </h4>
-    <div id="nav-btns" class="btn-group-vertical float-right" role="group"
-      aria-label="Button group with nested dropdown">
-      <button type="button" id="btn-xlarge" class="btn btn-secondary">Home</button>
-      <button type="button" id="btn-xlarge" class="btn btn-secondary">Login</button>
-      <div class="btn-group dropleft" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Search
-        </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-
-          <form  class="dropdown-item">
-            <input id = "movieSearch"  />
-            <button id = "movieBTN">Movies</button>
-          </form>
-          <form  class="dropdown-item">
-            <input id = "showSearch" />
-            <button id = "showBTN">Shows</button>
-          </form>
-          <form  class="dropdown-item">
-            <input id = "gameSearch"  />
-            <button id = "gameBTN">Video Games</button>
-
-          <form class="dropdown-item">
-           <input id= "movieSearch" />
-            <button id= "movieBtn">Movies</button>
-          </form>
-          <form class="dropdown-item">
-            <input id= "showsSearch" />
-            <button id="showsBtn">Shows</button>
-          </form>
-          <form class="dropdown-item" >
-            <input id= "gamesSearch"/>
-            <button id="gamesBtn">Video Games</button>
-          </form>
+  <div class="container">
+    <div class="jumbotron center">
+      <h1 class="display-4">Digital Media News</h1>
+      <h4 class="description">Search for Movie, Show, and Video Game news 
+      </h4>
+      <h4 class="description">with just the click of a button.
+      </h4>
+      <div id="nav-btns" class="btn-group-vertical float-right" role="group"
+        aria-label="Button group with nested dropdown">
+        <button type="button" id="btn-xlarge" class="btn btn-secondary btn-lg">Home</button>
+        <button type="button" id="btn-xlarge" class="btn btn-secondary btn-lg">Login</button>
+        <div class="btn-group dropleft" role="group">
+          <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Search
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <form class="dropdown-item">
+              <input id="movieSearch" />
+              <button id="movieBTN">Movies</button>
+            </form>
+            <form class="dropdown-item">
+              <input id="showSearch" />
+              <button id="showBTN">Shows</button>
+            </form>
+            <form class="dropdown-item">
+              <input id="gameSearch" />
+              <button id="gameBTN">Video Games</button>
+          </div>
+        </div>
+        <div id="welcome">
         </div>
       </div>
-      <div id="welcome">
-        </div>
     </div>
   </div>
   <!--div to contain entire webpage body-->
@@ -109,8 +99,8 @@
             <!-- <img class="img-fluid"  src="video-game.png" alt="Avat ar" /> -->
           </div>
           <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title" id = "header1"></h4>
-            <p class="card-text" id = "OVA1"></p>
+            <h4 class="card-title" id="header1"></h4>
+            <p class="card-text" id="OVA1"></p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
             <a href="" class="btn btn-outline-primary float-right" id="button1">Read More</a>
@@ -120,14 +110,15 @@
       <!--article 2-->
       <div class="col-md-6 col-lg-4 pb-3">
         <div class="card card-custom bg-white border-white border-0">
-          <div class="card-custom-img" id="img2" style="background-image: url();">
+          <div class="card-custom-img" id="img2"
+            style="background-image: url(https://i.ytimg.com/vi/MK9YPjKss9o/maxresdefault.jpg);">
           </div>
           <div class="card-custom-avatar">
             <!-- <img class="img-fluid" src="television.png" alt="Avatar" /> -->
           </div>
           <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title" id = "header2"></h4>
-            <p class="card-text" id = "OVA2"></p>
+            <h4 class="card-title" id="header2"></h4>
+            <p class="card-text" id="OVA2"></p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
             <a href="" id="button2" class="btn btn-outline-primary float-right">Read More</a>
@@ -143,7 +134,7 @@
             <!-- <img class="img-fluid" src="music.png" alt="Avatar" /> -->
           </div>
           <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title" id = "header3"></h4>
+            <h4 class="card-title" id="header3"></h4>
             <p class="card-text" id="OVA3"></p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
@@ -157,34 +148,35 @@
       <!--article 4-->
       <div class="col-md-6 col-lg-4 pb-3">
         <div class="card card-custom bg-white border-white border-0">
-          <div class="card-custom-img" id = "img4" style="background-image: url(avengers.jpg);">
+          <div class="card-custom-img" id="img4"
+            style="background-image: url(http://christandcascadia.com/wp-content/uploads/2014/02/trending-now5_1.jpg);">
           </div>
           <div class="card-custom-avatar">
             <!-- <img class="img-fluid" src="movies.png" alt="Avatar" /> -->
           </div>
           <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title" id= "header4"></h4>
-            <p class="card-text" id= "OVA4"></p>
+            <h4 class="card-title" id="header4"></h4>
+            <p class="card-text" id="OVA4"></p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <a href="" id = "button4" class="btn btn-outline-primary float-right">Read More</a>
+            <a href="" id="button4" class="btn btn-outline-primary float-right">Read More</a>
           </div>
         </div>
       </div>
       <!--article 5-->
       <div class="col-md-6 col-lg-4 pb-3">
         <div class="card card-custom bg-white border-white border-0">
-          <div class="card-custom-img" id = "img5" style="background-image: url();">
+          <div class="card-custom-img" id="img5" style="background-image: url();">
           </div>
           <div class="card-custom-avatar">
             <!-- <img class="img-fluid" src="music.png" alt="Avatar" /> -->
           </div>
           <div class="card-body" style="overflow-y: auto">
-            <h4 class="card-title" id = "header5"></h4>
-            <p class="card-text" id = "OVA5"></p>
+            <h4 class="card-title" id="header5"></h4>
+            <p class="card-text" id="OVA5"></p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <a id = "button5" href="" class="btn btn-outline-primary float-right">Read More</a>
+            <a id="button5" href="" class="btn btn-outline-primary float-right">Read More</a>
           </div>
         </div>
       </div>
@@ -215,8 +207,8 @@
 
   <script src="api.js"></script>
   <script src="assets/javascript.js"></script>
-  <Script src="SearchingAPI.js"></script>
-  
+  <script src="SearchingAPI.js"></script>
+
 
 </body>
 
