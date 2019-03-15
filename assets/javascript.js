@@ -17,6 +17,7 @@ $("#createProfile").on("click", function () {
 
     var email = $("#email").val().trim();
     var password = $("#passConfirm").val().trim();
+    var firstName = $("#lastName").val()
     //below is the field user first enters password in
     var password1 = $("#password").val().trim();
 
@@ -36,7 +37,15 @@ $("#createProfile").on("click", function () {
         });
         $("#loginMessageNew").text("User Created Successfully. Please log in below!");
     }
-    console.log(email, password);
+
+    //creating db object 
+    var n = {
+        name: firstName
+    };
+    //pushing object to db
+    firebase.database().ref().push(n)
+    console.log(email, password, firstName);
+
 });
 
 
@@ -76,6 +85,9 @@ $("#btnLogin").on("click", function () {
 
     //directing user to home page when login is successful 
     document.location.href = "index.html";
+
+    // var uname = childSnapshot.val().name;
+
 });
 
 // this does return the current user ID. Need to retrieve the Email
@@ -86,10 +98,10 @@ $(document).ready(function () {
             database.ref().on("child_added", function (childSnapshot) {
                 var uEmail = childSnapshot.val().uemail;
                 console.log(childSnapshot.val());
-
                 //the below returns our test users email that is stored in the db
                 //will need to change the div that it hooks on to
-                $("#indexUser").text("Welcome, " + uEmail + "!");
+                $("#username").html("<h1>" + "Hello, " + uEmail + "!" + "</h1>");
+                $("#welcome").html("<p>" + "Welcome, " + uEmail + "!" + "</p>");
             })
         }
         else {
@@ -100,10 +112,30 @@ $(document).ready(function () {
 })
 
 // //this is where the user's search history will be stored in the db
-// var movie = $("#").val().trim();
-// var show = $("#").val().trim();
-// var game = $("#").val().trim();
+var movie = $("#movieSearch").val().trim();
+var show = $("#showsSearch").val().trim();
+var game = $("#gameSearch").val();
 
-// var searches ={
+$("#movieBtn").on("click", function () {
+    event.preventDefault();
+    var searchMov = {
+        movies: movie,
+    }
+    firebase.database().ref().push(searchMov);
+})
 
-// }
+$("#showsBtn").on("click", function () {
+    var searchShow = {     
+        shows: show,
+    }
+    firebase.database().ref().push(searchShow);
+})
+
+$("#movieBtn").on("click", function () {
+    var searchGame = {
+        games: game
+    }
+    firebase.database().ref().push(searchGame);
+})
+
+
