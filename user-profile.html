@@ -20,6 +20,8 @@
     <title>Digital Media Reviews</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+
 </head>
 
 <body>
@@ -27,7 +29,6 @@
     <div class="container profile-page">
         <div class="row">
             <div class="col-sm-10" id="username">
-                <h1>Username</h1>
             </div>
             <div class="col-sm-2">
                 <a href="/users" class="pull-right" id="avatar"><img title="profile image"
@@ -46,10 +47,10 @@
                     <li class="list-group-item text-muted">Profile</li>
                     <li class="list-group-item text-right" id="date-joined"><span
                             class="pull-left"><strong>Joined</strong></span>
-                        2/13/2014</li>
-                    <li class="list-group-item text-right" id="real-name"><span class="pull-left"><strong>Real
-                                name</strong></span>
-                        Jane Bishop</li>
+                        3/16/19</li>
+                    <li class="list-group-item text-right" id="real-name"><span class="pull-left"><strong>
+                                Name</strong></span>
+                        Shane Maziekien</li>
                 </ul>
 
                 <br>
@@ -93,34 +94,26 @@
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-movies" role="tabpanel"
                         aria-labelledby="pills-movie-tab">
-                        <table class="table">
+                        <table class="table" id="movieHistory">
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="tab-pane fade" id="pills-tv" role="tabpanel" aria-labelledby="pills-tv-tab">
-                        <table class="table">
+                        <table class="table" id="showsHistory">
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Jim</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <div class="tab-pane fade" id="pills-video-games" role="tabpanel"
                         aria-labelledby="pills-video-games-tab">
-                        <table class="table">
+                        <table class="table" id="gamesHistory">
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Lauren</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+
+                <script src="assets/javascript.js"></script>
+
+</body>
