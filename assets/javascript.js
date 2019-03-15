@@ -115,7 +115,7 @@ $("#movieBtn").on("click", function () {
 $("#showsBtn").on("click", function () {
     var show = $("#showsSearch").val().trim();
     event.preventDefault();
-    var searchShow = {     
+    var searchShow = {
         shows: show,
     }
     firebase.database().ref().push(searchShow);
@@ -142,6 +142,21 @@ database.ref().on("child_added", function (childSnapshot) {
     (console.log(dbMovie));
     (console.log(dbTv));
     (console.log(dbGame));
+
+    var newRowMov = $("<tr>").append(
+        $("<td>").text(dbMovie)
+    );
+    $("#movieHistory").append(newRowMov);
+
+    var newRowTv = $("<tr>").append(
+        $("<td>").text(dbTv)
+    );
+    $("#showsHistory").append(newRowTv);
+
+    var newRowGame = $("<tr>").append(
+        $("<td>").text(dbGame)
+    );
+    $("gamesHistory").append(newRowGame);
 })
 
 //need to create elements to be used in the tables on the user profile page 
