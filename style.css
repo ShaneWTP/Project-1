@@ -35,7 +35,14 @@ body{
   border: none;
   position: relative;
   bottom: 110px;
-  left: 30px;
+  padding-bottom: 50px;
+}
+
+#profileB {
+  background-color: transparent;
+  border: none;
+  position: relative;
+  bottom: 110px;
   padding-bottom: 50px;
 }
 
@@ -44,7 +51,6 @@ body{
   border: none;
   position: relative;
   bottom: 110px;
-  left: 30px;
 }
 
 #welcome {
