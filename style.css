@@ -13,7 +13,7 @@ body{
   background-repeat: no-repeat;
   min-height: 600px;
   font-family: 'Ultra', serif;
-  color: black;
+  color:black;
 }
 
 .jumbotron h1 {
@@ -121,12 +121,12 @@ footer {
 }
 
 #username {
-  padding: 100px;
+  margin-top: 120px;
   color: white;
 }
 
 #avatar {
-  padding: 20px;
+  margin-top: 60px;
 }
 
 .profile-page {
@@ -261,3 +261,27 @@ footer {
     font-size: 12px;
   }
 }
+
+#loginMessageNew{
+ text-align: center;
+ margin-top: 10px;
+ margin-left: 50px;
+}
+
+#loginMessage{
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 100px;
+  color: red;
+ }
+
+#welcome{
+  color: black;
+}
+
+#profileSearch{
+  border-block-start-style: double;
+  padding: 10px;
+  border-color: white;
+}
+
